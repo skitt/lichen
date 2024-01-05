@@ -65,8 +65,6 @@ $ lichen $GOPATH/bin/lichen
 github.com/cpuguy83/go-md2man/v2@v2.0.1: MIT (allowed)
 github.com/davecgh/go-spew@v1.1.1: ISC (allowed)
 github.com/google/licenseclassifier/v2@v2.0.0: Apache-2.0 (allowed)
-github.com/hashicorp/errwrap@v1.0.0: MPL-2.0 (allowed)
-github.com/hashicorp/go-multierror@v1.1.1: MPL-2.0 (allowed)
 github.com/lucasb-eyer/go-colorful@v1.2.0: MIT (allowed)
 github.com/mattn/go-isatty@v0.0.14: MIT (allowed)
 github.com/mattn/go-runewidth@v0.0.13: MIT (allowed)
@@ -83,12 +81,11 @@ gopkg.in/yaml.v2@v2.4.0: Apache-2.0, MIT (allowed)
 
 ```
 $ lichen --template="{{range .Modules}}{{range .Module.Licenses}}{{.Name | printf \"%s\n\"}}{{end}}{{end}}" $GOPATH/bin/lichen | sort | uniq -c | sort -nr
-      9 MIT
-      2 MPL-2.0
-      2 Apache-2.0
-      1 ISC
-      1 BSD-3-Clause
-      1 BSD-2-Clause
+   9 MIT
+   2 Apache-2.0
+   1 ISC
+   1 BSD-3-Clause
+   1 BSD-2-Clause
 ```
 
 ## Config
