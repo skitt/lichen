@@ -9,8 +9,6 @@ import (
 	"github.com/uw-labs/lichen/internal/module"
 )
 
-const defaultThreshold = 0.80
-
 func Run(ctx context.Context, conf Config, binPaths ...string) (Summary, error) {
 	// extract modules details from each supplied binary
 	binaries, err := module.Extract(ctx, binPaths...)
@@ -24,12 +22,7 @@ func Run(ctx context.Context, conf Config, binPaths ...string) (Summary, error) 
 		return Summary{}, err
 	}
 
-	// resolve licenses based on a minimum threshold
-	threshold := defaultThreshold
-	if conf.Threshold != nil {
-		threshold = *conf.Threshold
-	}
-	modules, err = license.Resolve(modules, threshold)
+	modules, err = license.Resolve(modules)
 	if err != nil {
 		return Summary{}, err
 	}

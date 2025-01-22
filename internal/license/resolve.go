@@ -13,7 +13,7 @@ import (
 
 // Resolve inspects each module and determines what it is licensed under. The returned slice contains each
 // module enriched with license information.
-func Resolve(modules []model.Module, threshold float64) ([]model.Module, error) {
+func Resolve(modules []model.Module) ([]model.Module, error) {
 	lc, err := assets.DefaultClassifier()
 	if err != nil {
 		return nil, err
