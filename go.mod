@@ -1,6 +1,6 @@
 module github.com/uw-labs/lichen
 
-go 1.20
+go 1.22
 
 require (
 	github.com/google/licenseclassifier/v2 v2.0.0

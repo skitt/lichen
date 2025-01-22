@@ -99,7 +99,6 @@ func TestModuleReference_IsLocal(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		tc := tc
 		t.Run(tc.name, func(tt *testing.T) {
 			actual := tc.ref.IsLocal()
 			assert.Equal(tt, tc.expected, actual)

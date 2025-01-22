@@ -280,7 +280,6 @@ func TestParse(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		tc := tc
 		t.Run(tc.name, func(tt *testing.T) {
 			actual, err := buildinfo.Parse(tc.input)
 			if tc.expectedErr == "" {
